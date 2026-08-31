@@ -1,0 +1,3643 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maa Shakti Printing & Digital Service</title>
+
+<meta name="description" content="Maa Shakti Printing & Digital Service – Printing, Digital, Government Services, PAN Card, EPFO, E-Shram, Online Form Filling અને વધુ.">
+
+<meta name="keywords" content="Maa Shakti Printing, Digital Service, PAN Card, EPFO, E-Shram, Printing, Online Form, Savli, Vadodara">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#071a35;
+    --secondary:#0d6efd;
+    --accent:#f5b700;
+    --red:#d90429;
+    --white:#ffffff;
+    --light:#f4f7fb;
+    --dark:#101828;
+    --green:#16a34a;
+    --shadow:0 15px 45px rgba(0,0,0,.12);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Noto Sans Gujarati',sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#06152d,#0c315f,#071a35);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    opacity:1;
+    visibility:visible;
+    transition:opacity .6s ease, visibility .6s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.loader-box{
+    text-align:center;
+    color:white;
+    animation:loaderZoom 1.5s infinite alternate;
+}
+
+.loader-logo{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid white;
+    box-shadow:0 0 45px rgba(255,255,255,.35);
+    background:white;
+}
+
+.loader-title{
+    margin-top:20px;
+    font-size:25px;
+    font-weight:800;
+}
+
+.loader-subtitle{
+    font-size:16px;
+    margin-top:5px;
+    color:#ffd76a;
+}
+
+.loader-bar{
+    width:220px;
+    height:5px;
+    background:rgba(255,255,255,.2);
+    margin:25px auto 0;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.loader-bar span{
+    display:block;
+    height:100%;
+    width:0;
+    background:#f5b700;
+    animation:loadBar 2s forwards;
+}
+
+@keyframes loadBar{
+    to{
+        width:100%;
+    }
+}
+
+@keyframes loaderZoom{
+    from{
+        transform:scale(.96);
+    }
+    to{
+        transform:scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   BACKGROUND SHAPES
+========================================================= */
+
+.bg-shape{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(1px);
+    opacity:.12;
+    z-index:-1;
+    animation:floatShape 8s ease-in-out infinite;
+    pointer-events:none;
+}
+
+.shape1{
+    width:250px;
+    height:250px;
+    background:#0d6efd;
+    top:10%;
+    left:-100px;
+}
+
+.shape2{
+    width:300px;
+    height:300px;
+    background:#f5b700;
+    right:-130px;
+    top:45%;
+    animation-delay:2s;
+}
+
+.shape3{
+    width:180px;
+    height:180px;
+    background:#d90429;
+    left:30%;
+    bottom:-80px;
+    animation-delay:4s;
+}
+
+@keyframes floatShape{
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+    50%{
+        transform:translateY(-35px) rotate(20deg);
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(7,26,53,.95);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.nav-container{
+    max-width:1250px;
+    margin:auto;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+}
+
+.nav-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+    text-decoration:none;
+    font-weight:800;
+    min-width:0;
+}
+
+.nav-brand img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+    background:white;
+    flex-shrink:0;
+}
+
+.nav-brand span{
+    white-space:normal;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ffd34d;
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+    user-select:none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    padding:150px 20px 80px;
+    background:
+    radial-gradient(circle at 20% 30%,rgba(13,110,253,.25),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(245,183,0,.18),transparent 30%),
+    linear-gradient(135deg,#041225,#0a2c54,#061a34);
+    color:white;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50%;
+    right:-200px;
+    top:-150px;
+    animation:rotateCircle 25s linear infinite;
+    pointer-events:none;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border:1px solid rgba(245,183,0,.15);
+    border-radius:50%;
+    left:-180px;
+    bottom:-200px;
+    animation:rotateCircle 20s linear infinite reverse;
+    pointer-events:none;
+}
+
+@keyframes rotateCircle{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.hero-container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero-content{
+    animation:heroLeft 1.2s ease forwards;
+}
+
+@keyframes heroLeft{
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.badge{
+    display:inline-flex;
+    padding:8px 15px;
+    border-radius:50px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    color:#ffd34d;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(38px,6vw,72px);
+    line-height:1.1;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#f5b700;
+}
+
+.hero p{
+    color:#d7e1ee;
+    font-size:18px;
+    line-height:1.8;
+    max-width:650px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    padding:14px 23px;
+    border-radius:12px;
+    font-family:inherit;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.35s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.btn-primary{
+    background:#f5b700;
+    color:#111;
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    color:white;
+}
+
+.hero-logo-box{
+    display:flex;
+    justify-content:center;
+    animation:heroRight 1.4s ease forwards;
+}
+
+@keyframes heroRight{
+    from{
+        opacity:0;
+        transform:translateX(80px) scale(.7) rotate(-10deg);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0) scale(1) rotate(0);
+    }
+}
+
+.logo-ring{
+    width:min(430px,80vw);
+    height:min(430px,80vw);
+    border-radius:50%;
+    padding:12px;
+    background:linear-gradient(45deg,#f5b700,#fff,#0d6efd,#f5b700);
+    animation:logoRotate 12s linear infinite;
+    box-shadow:0 0 80px rgba(245,183,0,.2);
+}
+
+.logo-ring img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    background:white;
+    animation:logoCounter 12s linear infinite;
+}
+
+@keyframes logoRotate{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes logoCounter{
+    to{
+        transform:rotate(-360deg);
+    }
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-heading .small{
+    color:#0d6efd;
+    font-weight:800;
+    font-size:15px;
+}
+
+.section-heading h2{
+    font-size:38px;
+    margin:10px 0;
+}
+
+.section-heading p{
+    color:#667085;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.service-card{
+    background:white;
+    padding:25px;
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    border:1px solid #edf0f5;
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:80px;
+    background:#0d6efd;
+    border-radius:50%;
+    right:-35px;
+    top:-35px;
+    opacity:.08;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+}
+
+.service-icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.service-card h3{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.service-card p{
+    color:#667085;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.price{
+    margin-top:15px;
+    font-size:20px;
+    color:#d90429;
+    font-weight:900;
+}
+
+
+/* =========================================================
+   PRICE TABLE
+========================================================= */
+
+.price-section{
+    background:white;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+    background:white;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.price-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+}
+
+.price-table th{
+    background:#071a35;
+    color:white;
+    padding:16px;
+    text-align:left;
+}
+
+.price-table td{
+    padding:14px 16px;
+    border-bottom:1px solid #edf0f5;
+}
+
+.price-table tr:hover{
+    background:#f7faff;
+}
+
+.price-tag{
+    font-weight:800;
+    color:#d90429;
+}
+
+
+/* =========================================================
+   BOOKING
+========================================================= */
+
+.booking-section{
+    background:
+    radial-gradient(circle at top right,rgba(13,110,253,.08),transparent 30%),
+    #f5f7fb;
+}
+
+.booking-layout{
+    display:grid;
+    grid-template-columns:1fr .75fr;
+    gap:30px;
+    align-items:start;
+}
+
+.booking-card,
+.payment-card{
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #d0d5dd;
+    border-radius:11px;
+    outline:none;
+    font-family:inherit;
+    background:#fff;
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 0 4px rgba(13,110,253,.08);
+}
+
+.form-group textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.file-box{
+    background:#f8fafc;
+    border:2px dashed #cbd5e1;
+    padding:18px;
+    border-radius:14px;
+}
+
+.file-box input[type="file"]{
+    width:100%;
+}
+
+.file-box small{
+    display:block;
+    margin-top:6px;
+    color:#667085;
+}
+
+#serviceInfo{
+    display:none;
+    padding:15px;
+    margin:0 0 5px;
+    background:#eef6ff;
+    border-left:4px solid #0d6efd;
+    border-radius:8px;
+    color:#344054;
+    line-height:1.6;
+}
+
+.payment-card{
+    text-align:center;
+    position:sticky;
+    top:100px;
+}
+
+.payment-card h3{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.payment-card p{
+    color:#667085;
+    font-size:14px;
+}
+
+.qr-image{
+    display:block;
+    width:min(300px,100%);
+    aspect-ratio:1;
+    object-fit:cover;
+    margin:25px auto;
+    border-radius:20px;
+    padding:10px;
+    background:white;
+    box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+.upi-note{
+    padding:12px;
+    border-radius:12px;
+    background:#ecfdf3;
+    color:#15803d;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.payment-check{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    cursor:pointer;
+    line-height:1.6;
+}
+
+.payment-check input{
+    width:auto !important;
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-image{
+    text-align:center;
+}
+
+.about-image img{
+    width:min(400px,100%);
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+.about-content h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    color:#667085;
+    line-height:1.9;
+}
+
+.info-list{
+    margin-top:25px;
+    display:grid;
+    gap:12px;
+}
+
+.info-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.info-item span:first-child{
+    font-size:22px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    background:#071a35;
+    color:white;
+}
+
+.contact .section-heading p{
+    color:#bdc9d8;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.contact-card{
+    padding:25px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.contact-card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,.11);
+}
+
+.contact-card .icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.contact-card h3{
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.contact-card p,
+.contact-card a{
+    color:#c8d3e0;
+    text-decoration:none;
+    font-size:14px;
+    word-break:break-word;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#030b18;
+    color:#9aa8ba;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.footer-logo{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:10px;
+    background:white;
+}
+
+.footer-title{
+    color:white;
+    font-size:21px;
+    font-weight:800;
+}
+
+.creator{
+    margin-top:15px;
+    color:#f5b700;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   FLOATING BUTTONS
+========================================================= */
+
+.whatsapp-float,
+.call-float{
+    position:fixed;
+    right:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
+    font-size:26px;
+    z-index:900;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    animation:pulse 2s infinite;
+}
+
+.whatsapp-float{
+    bottom:90px;
+    background:#16a34a;
+}
+
+.call-float{
+    bottom:20px;
+    background:#0d6efd;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow:0 0 0 0 rgba(13,110,253,.35);
+    }
+    70%{
+        box-shadow:0 0 0 15px rgba(13,110,253,0);
+    }
+    100%{
+        box-shadow:0 0 0 0 rgba(13,110,253,0);
+    }
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:30px;
+    transform:translate(-50%,100px);
+    background:#071a35;
+    color:white;
+    padding:15px 22px;
+    border-radius:12px;
+    z-index:9999;
+    opacity:0;
+    transition:.4s;
+    width:max-content;
+    max-width:90%;
+    text-align:center;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-container,
+    .booking-layout,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-logo-box{
+        order:-1;
+    }
+
+    .payment-card{
+        position:relative;
+        top:auto;
+    }
+}
+
+
+@media(max-width:700px){
+
+    .nav-container{
+        padding:10px 15px;
+    }
+
+    .nav-brand{
+        max-width:calc(100% - 50px);
+    }
+
+    .nav-brand span{
+        font-size:13px;
+    }
+
+    .nav-brand img{
+        width:40px;
+        height:40px;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:15px;
+        right:15px;
+        padding:20px;
+        border-radius:15px;
+        background:#071a35;
+        flex-direction:column;
+        gap:16px;
+        box-shadow:0 15px 40px rgba(0,0,0,.25);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .services-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    section{
+        padding:65px 15px;
+    }
+
+    .hero{
+        padding-top:120px;
+        min-height:auto;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .section-heading h2{
+        font-size:30px;
+    }
+
+    .booking-card,
+    .payment-card{
+        padding:20px;
+    }
+
+    .about-content h2{
+        font-size:32px;
+    }
+
+    .whatsapp-float,
+    .call-float{
+        right:15px;
+        width:52px;
+        height:52px;
+    }
+
+    .whatsapp-float{
+        bottom:80px;
+    }
+
+    .call-float{
+        bottom:18px;
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        scroll-behavior:auto !important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     LOADER
+========================================================= -->
+
+<div id="loader">
+
+    <div class="loader-box">
+
+        <img
+            src="C:\Users\PC\OneDrive\Pictures\Screenshots\Screenshot 2026-08-30 183014.png"
+            class="loader-logo"
+            alt="Maa Shakti Printing & Digital Service Logo"
+            onerror="this.style.display='none';"
+        >
+
+        <div class="loader-title">
+            મા શક્તિ પ્રિન્ટિંગ એન્ડ ડિજિટલ સર્વિસ
+        </div>
+
+        <div class="loader-subtitle">
+            આપનું સ્વાગત છે
+        </div>
+
+        <div class="loader-bar">
+            <span></span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- BACKGROUND SHAPES -->
+
+<div class="bg-shape shape1"></div>
+<div class="bg-shape shape2"></div>
+<div class="bg-shape shape3"></div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="nav-brand">
+
+            <img
+                src="C:\Users\PC\OneDrive\Pictures\Screenshots\Screenshot 2026-08-30 183014.png"
+                alt="મા શક્તિ લોગો"
+                onerror="this.style.display='none';"
+            >
+
+            <span>
+                Maa Shakti Printing & Digital Service
+            </span>
+
+        </a>
+
+
+        <div
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </div>
+
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home">હોમ</a>
+            </li>
+
+            <li>
+                <a href="#services">સેવાઓ</a>
+            </li>
+
+            <li>
+                <a href="#prices">ભાવ યાદી</a>
+            </li>
+
+            <li>
+                <a href="#booking">બુકિંગ</a>
+            </li>
+
+            <li>
+                <a href="#about">અમારા વિશે</a>
+            </li>
+
+            <li>
+                <a href="#contact">સંપર્ક</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✦ વિશ્વસનીય પ્રિન્ટિંગ અને ડિજિટલ સેવા
+            </div>
+
+
+            <h1>
+                મા શક્તિ<br>
+                <span>પ્રિન્ટિંગ & ડિજિટલ સર્વિસ</span>
+            </h1>
+
+
+            <p>
+                તમારી પ્રિન્ટિંગ, ફોટો, સરકારી સેવા,
+                ઓનલાઈન ફોર્મ, PAN Card, EPFO,
+                E-Shram, Resume અને અન્ય ડિજિટલ
+                સેવાઓ માટે એક જ વિશ્વસનીય સ્થળ.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#booking"
+                    class="btn btn-primary"
+                >
+                    📅 સેવા બુક કરો
+                </a>
+
+
+                <a
+                    href="https://wa.me/919510452071"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    💬 WhatsApp કરો
+                </a>
+
+
+                <a
+                    href="https://maps.app.goo.gl/tJimaNekZu3SMVHF7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    📍 લોકેશન
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-logo-box">
+
+            <div class="logo-ring">
+
+                <img
+                    src="C:\Users\PC\OneDrive\Pictures\Screenshots\Screenshot 2026-08-30 183014.png"
+                    alt="Maa Shakti Printing & Digital Service Logo"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="small">
+                અમારી સેવાઓ
+            </div>
+
+            <h2>
+                તમારી જરૂરિયાતની તમામ સેવાઓ
+            </h2>
+
+            <p>
+                ઝડપી, સરળ અને વિશ્વસનીય ડિજિટલ સેવા
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">🖨️</div>
+
+                <h3>A4 પ્રિન્ટિંગ</h3>
+
+                <p>
+                    One Side, Two Side અને Colour Printing
+                </p>
+
+                <div class="price">
+                    ₹2 થી શરૂ
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">📸</div>
+
+                <h3>ફોટો સર્વિસ</h3>
+
+                <p>
+                    Passport Photo, Glossy Photo અને Photo Printing
+                </p>
+
+                <div class="price">
+                    ₹50 થી શરૂ
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">🪪</div>
+
+                <h3>PAN Card સેવા</h3>
+
+                <p>
+                    PAN Card સંબંધિત વિવિધ ડિજિટલ સેવાઓ
+                </p>
+
+                <div class="price">
+                    ₹200 થી શરૂ
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">🏛️</div>
+
+                <h3>સરકારી સેવાઓ</h3>
+
+                <p>
+                    Aadhaar, 7/12, 8-A, 6 હકપત્ર વગેરે
+                </p>
+
+                <div class="price">
+                    ₹15 થી શરૂ
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">👷</div>
+
+                <h3>E-Shram Card</h3>
+
+                <p>
+                    E-Shram Card અને Hard Copy સેવા
+                </p>
+
+                <div class="price">
+                    ₹100
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">💼</div>
+
+                <h3>Resume / CV</h3>
+
+                <p>
+                    Professional Resume / CV Hard + Soft Copy
+                </p>
+
+                <div class="price">
+                    ₹100
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">👨‍👩‍👧</div>
+
+                <h3>Marriage Bio Data</h3>
+
+                <p>
+                    Marriage Bio Data Hard + Soft Copy
+                </p>
+
+                <div class="price">
+                    ₹100
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">🏦</div>
+
+                <h3>EPFO સેવા</h3>
+
+                <p>
+                    KYC, E-Nomination, PF Withdrawal અને UAN
+                </p>
+
+                <div class="price">
+                    ₹50 થી શરૂ
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">📝</div>
+
+                <h3>Online Form Filling</h3>
+
+                <p>
+                    વિવિધ પ્રકારના Online Form ભરવાની સેવા
+                </p>
+
+                <div class="price">
+                    કામ પ્રમાણે
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">🎨</div>
+
+                <h3>Logo Designing</h3>
+
+                <p>
+                    Business માટે Professional Logo Design
+                </p>
+
+                <div class="price">
+                    કામ પ્રમાણે
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">📄</div>
+
+                <h3>લેમિનેશન</h3>
+
+                <p>
+                    A4 Paper Lamination સેવા
+                </p>
+
+                <div class="price">
+                    ₹20
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">📱</div>
+
+                <h3>Mobile Printing</h3>
+
+                <p>
+                    Mobileમાંથી સીધી A4 Printing
+                </p>
+
+                <div class="price">
+                    ₹5 / પેજ
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRICE LIST
+========================================================= -->
+
+<section class="price-section" id="prices">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="small">
+                અમારી કિંમત
+            </div>
+
+            <h2>
+                સેવા ભાવ યાદી
+            </h2>
+
+            <p>
+                પારદર્શક અને સરળ ભાવ
+            </p>
+
+        </div>
+
+
+        <div class="table-wrapper reveal">
+
+            <table class="price-table">
+
+                <thead>
+
+                    <tr>
+                        <th>સેવા</th>
+                        <th>કિંમત</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>A4 One Side Printing</td>
+                        <td class="price-tag">₹2</td>
+                    </tr>
+
+                    <tr>
+                        <td>A4 Two Side Printing</td>
+                        <td class="price-tag">₹3</td>
+                    </tr>
+
+                    <tr>
+                        <td>A4 Colour Printing</td>
+                        <td class="price-tag">₹10</td>
+                    </tr>
+
+                    <tr>
+                        <td>A4 Mobile Printing</td>
+                        <td class="price-tag">₹5 / પેજ</td>
+                    </tr>
+
+                    <tr>
+                        <td>A4 Glossy Photo</td>
+                        <td class="price-tag">₹40</td>
+                    </tr>
+
+                    <tr>
+                        <td>A4 Sticker Paper</td>
+                        <td class="price-tag">₹20</td>
+                    </tr>
+
+                    <tr>
+                        <td>A4 Frame</td>
+                        <td class="price-tag">₹250</td>
+                    </tr>
+
+                    <tr>
+                        <td>A4 Paper Lamination</td>
+                        <td class="price-tag">₹20</td>
+                    </tr>
+
+                    <tr>
+                        <td>Passport Photo – 8 pcs</td>
+                        <td class="price-tag">₹50</td>
+                    </tr>
+
+                    <tr>
+                        <td>Resume / CV – 2 Hard + Soft Copy</td>
+                        <td class="price-tag">₹100</td>
+                    </tr>
+
+                    <tr>
+                        <td>Marriage Bio Data – 2 Hard + Soft Copy</td>
+                        <td class="price-tag">₹100</td>
+                    </tr>
+
+                    <tr>
+                        <td>EPFO KYC</td>
+                        <td class="price-tag">₹100</td>
+                    </tr>
+
+                    <tr>
+                        <td>EPFO E-Nomination</td>
+                        <td class="price-tag">₹100</td>
+                    </tr>
+
+                    <tr>
+                        <td>EPFO PF Withdrawal</td>
+                        <td class="price-tag">₹200</td>
+                    </tr>
+
+                    <tr>
+                        <td>EPFO UAN Activation</td>
+                        <td class="price-tag">₹50</td>
+                    </tr>
+
+                    <tr>
+                        <td>Aadhaar Download + Print + Lamination</td>
+                        <td class="price-tag">₹50</td>
+                    </tr>
+
+                    <tr>
+                        <td>7/12, 8-A, 6 હકપત્ર</td>
+                        <td class="price-tag">₹15 / પેજ</td>
+                    </tr>
+
+                    <tr>
+                        <td>PAN Card – Signature</td>
+                        <td class="price-tag">₹200</td>
+                    </tr>
+
+                    <tr>
+                        <td>PAN Card – Thumb Impression</td>
+                        <td class="price-tag">₹300</td>
+                    </tr>
+
+                    <tr>
+                        <td>E-Shram Card + Hard Copy</td>
+                        <td class="price-tag">₹100</td>
+                    </tr>
+
+                    <tr>
+                        <td>Online Form Filling</td>
+                        <td class="price-tag">કામ પ્રમાણે</td>
+                    </tr>
+
+                    <tr>
+                        <td>Logo Designing</td>
+                        <td class="price-tag">કામ પ્રમાણે</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BOOKING
+========================================================= -->
+
+<section class="booking-section" id="booking">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="small">
+                ઓનલાઈન બુકિંગ
+            </div>
+
+            <h2>
+                તમારી સેવા માટે બુકિંગ કરો
+            </h2>
+
+            <p>
+                નીચેની માહિતી ભરો અને WhatsApp દ્વારા બુકિંગ મોકલો
+            </p>
+
+        </div>
+
+
+        <div class="booking-layout">
+
+
+            <!-- BOOKING CARD -->
+
+            <div class="booking-card reveal">
+
+                <form id="bookingForm">
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="customerName">
+                                ગ્રાહકનું નામ *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerName"
+                                placeholder="તમારું નામ લખો"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customerPhone">
+                                મોબાઈલ નંબર *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                placeholder="10 અંકનો મોબાઈલ નંબર"
+                                inputmode="numeric"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="service">
+                                સેવા પસંદ કરો *
+                            </label>
+
+                            <select
+                                id="service"
+                                required
+                            >
+
+                                <option value="">
+                                    -- સેવા પસંદ કરો --
+                                </option>
+
+                                <option value="A4 One Side Printing">
+                                    A4 One Side Printing – ₹2
+                                </option>
+
+                                <option value="A4 Two Side Printing">
+                                    A4 Two Side Printing – ₹3
+                                </option>
+
+                                <option value="A4 Colour Printing">
+                                    A4 Colour Printing – ₹10
+                                </option>
+
+                                <option value="A4 Mobile Printing">
+                                    A4 Mobile Printing – ₹5/page
+                                </option>
+
+                                <option value="A4 Glossy Photo">
+                                    A4 Glossy Photo – ₹40
+                                </option>
+
+                                <option value="A4 Sticker Paper">
+                                    A4 Sticker Paper – ₹20
+                                </option>
+
+                                <option value="A4 Frame">
+                                    A4 Frame – ₹250
+                                </option>
+
+                                <option value="A4 Paper Lamination">
+                                    A4 Paper Lamination – ₹20
+                                </option>
+
+                                <option value="Passport Photo">
+                                    Passport Photo – ₹50
+                                </option>
+
+                                <option value="Resume / CV">
+                                    Resume / CV – ₹100
+                                </option>
+
+                                <option value="Marriage Bio Data">
+                                    Marriage Bio Data – ₹100
+                                </option>
+
+                                <option value="EPFO KYC">
+                                    EPFO KYC – ₹100
+                                </option>
+
+                                <option value="EPFO E-Nomination">
+                                    EPFO E-Nomination – ₹100
+                                </option>
+
+                                <option value="EPFO PF Withdrawal">
+                                    EPFO PF Withdrawal – ₹200
+                                </option>
+
+                                <option value="EPFO UAN Activation">
+                                    EPFO UAN Activation – ₹50
+                                </option>
+
+                                <option value="Aadhaar Download + Print + Lamination">
+                                    Aadhaar Download + Print + Lamination – ₹50
+                                </option>
+
+                                <option value="7/12, 8-A, 6 હકપત્ર">
+                                    7/12, 8-A, 6 હકપત્ર – ₹15/page
+                                </option>
+
+                                <option value="PAN Card – Signature">
+                                    PAN Card – Signature – ₹200
+                                </option>
+
+                                <option value="PAN Card – Thumb Impression">
+                                    PAN Card – Thumb Impression – ₹300
+                                </option>
+
+                                <option value="E-Shram Card">
+                                    E-Shram Card + Hard Copy – ₹100
+                                </option>
+
+                                <option value="Online Form Filling">
+                                    Online Form Filling – કામ પ્રમાણે
+                                </option>
+
+                                <option value="Logo Designing">
+                                    Logo Designing – કામ પ્રમાણે
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="bookingDate">
+                                બુકિંગ તારીખ *
+                            </label>
+
+                            <input
+                                type="date"
+                                id="bookingDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="bookingTime">
+                                પસંદગીનો સમય *
+                            </label>
+
+                            <select
+                                id="bookingTime"
+                                required
+                            >
+
+                                <option value="">
+                                    -- સમય પસંદ કરો --
+                                </option>
+
+                                <option>
+                                    સવારે 8:00 - 10:00
+                                </option>
+
+                                <option>
+                                    સવારે 10:00 - 12:00
+                                </option>
+
+                                <option>
+                                    બપોરે 12:00 - 2:00
+                                </option>
+
+                                <option>
+                                    બપોરે 2:00 - 4:00
+                                </option>
+
+                                <option>
+                                    સાંજે 4:00 - 6:00
+                                </option>
+
+                                <option>
+                                    સાંજે 6:00 - 8:00
+                                </option>
+
+                                <option>
+                                    રાત્રે 8:00 - 9:00
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <div id="serviceInfo"></div>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="servicefile">
+                                જરૂરી ફાઇલ / ફોટો અપલોડ કરો
+                            </label>
+
+                            <div class="file-box">
+
+                                <input
+                                    type="file"
+                                    id="servicefile"multiple accept=".jpg,.jpeg,.pdf"
+                                    accept=".jpg,.jpeg,.pdf,image/jpeg,application/pdf"
+                                    multiple
+                                >
+
+                                <small>
+                                    JPG / JPEG / PDF ફાઇલ પસંદ કરી શકો છો.
+                                    મહત્તમ 10 MB પ્રતિ ફાઇલ.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="message">
+                                વધારાની માહિતી
+                            </label>
+
+                            <textarea
+                                id="message"
+                                placeholder="તમારી ખાસ જરૂરિયાત અહીં લખો..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label class="payment-check">
+
+                                <input
+                                    type="checkbox"
+                                    id="paymentConfirm"
+                                    required
+                                >
+
+                                <span>
+                                    મેં ચુકવણી / બુકિંગ સંબંધિત માહિતી સમજી છે.
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                id="bookingSubmitBtn"
+                                style="width:100%;"
+                            >
+                                📲 WhatsApp પર બુકિંગ મોકલો
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- PAYMENT CARD -->
+
+            <div class="payment-card reveal">
+
+                <h3>
+                    💳 ઓનલાઈન ચુકવણી
+                </h3>
+
+                <p>
+                    QR Code સ્કેન કરીને Online Payment કરી શકો છો.
+                </p>
+
+
+                <img
+                    src="C:\Users\PC\OneDrive\Pictures\Screenshots\paymentqr.jpeg"
+                    class="qr-image"
+                    alt="Maa Shakti Payment QR Code"
+                >
+
+
+                <div class="upi-note">
+                    ✓ Online + Offline બંને Payment ઉપલબ્ધ
+                </div>
+
+
+                <p>
+                    ચુકવણી કર્યા પછી બુકિંગની વિગતો WhatsApp દ્વારા મોકલો.
+                </p>
+
+
+                <a
+                    href="https://wa.me/919510452071"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                    style="width:100%;margin-top:15px;"
+                >
+                    💬 WhatsApp પર સંપર્ક કરો
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-image reveal">
+
+                <img
+                    src="C:\Users\PC\OneDrive\Pictures\Screenshots\Screenshot 2026-08-30 183014.png"
+                    alt="મા શક્તિ પ્રિન્ટિંગ એન્ડ ડિજિટલ સર્વિસ"
+                >
+
+            </div>
+
+
+            <div class="about-content reveal">
+
+                <div
+                    class="section-heading"
+                    style="text-align:left;margin-bottom:20px;"
+                >
+
+                    <div class="small">
+                        અમારા વિશે
+                    </div>
+
+                    <h2>
+                        તમારી સેવા, અમારી જવાબદારી
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    મા શક્તિ પ્રિન્ટિંગ & ડિજિટલ સર્વિસ ખાતે
+                    પ્રિન્ટિંગ, ફોટો, સરકારી સેવાઓ,
+                    ઓનલાઈન ફોર્મ, PAN Card, EPFO,
+                    E-Shram, Resume અને વિવિધ
+                    ડિજિટલ સેવાઓ ઉપલબ્ધ છે.
+
+                </p>
+
+
+                <div class="info-list">
+
+
+                    <div class="info-item">
+
+                        <span>📍</span>
+
+                        <div>
+                            <strong>સરનામું</strong><br>
+                            Balana Muvada, Gram Panchayat Mevli,
+                            Taluka Savli, District Vadodara, Gujarat
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>🕐</span>
+
+                        <div>
+                            <strong>સમય</strong><br>
+                            સવારે 8:00 થી રાત્રે 9:00
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>📅</span>
+
+                        <div>
+                            <strong>કામકાજના દિવસો</strong><br>
+                            અઠવાડિયાના તમામ દિવસ ખુલ્લું
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>🏠</span>
+
+                        <div>
+                            <strong>Home Delivery</strong><br>
+                            હાલમાં ઉપલબ્ધ નથી
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>🖨️</span>
+
+                        <div>
+                            <strong>પ્રિન્ટર</strong><br>
+                            Brother DCP-T830DW
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="small">
+                સંપર્ક કરો
+            </div>
+
+            <h2>
+                અમારો સંપર્ક
+            </h2>
+
+            <p>
+                સેવા અથવા બુકિંગ માટે અમારો સંપર્ક કરો.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card reveal">
+
+                <div class="icon">
+                    📞
+                </div>
+
+                <h3>
+                    મોબાઈલ
+                </h3>
+
+                <a href="tel:+919510452071">
+                    9510452071
+                </a>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="icon">
+                    💬
+                </div>
+
+                <h3>
+                    WhatsApp
+                </h3>
+
+                <a
+                    href="https://wa.me/919510452071"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp પર મેસેજ કરો
+                </a>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="icon">
+                    📧
+                </div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <a href="mailto:OfficialMaashakti.Services@gmail.com">
+                    OfficialMaashakti.Services@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <div class="icon">
+                    📍
+                </div>
+
+                <h3>
+                    Google Maps
+                </h3>
+
+                <a
+                    href="https://maps.app.goo.gl/tJimaNekZu3SMVHF7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    લોકેશન જુઓ
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="text-align:center;margin-top:35px;">
+
+            <a
+                href="https://maps.app.goo.gl/tJimaNekZu3SMVHF7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                📍 Google Maps પર અમારું લોકેશન જુઓ
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <img
+        src="C:\Users\PC\OneDrive\Pictures\Screenshots\Screenshot 2026-08-30 183014.png"
+        class="footer-logo"
+        alt="Maa Shakti Logo"
+    >
+
+    <div class="footer-title">
+        મા શક્તિ પ્રિન્ટિંગ & ડિજિટલ સર્વિસ
+    </div>
+
+    <p style="margin-top:8px;">
+        Balana Muvada • Savli • Vadodara • Gujarat
+    </p>
+
+    <p style="margin-top:8px;">
+        🕐 સવારે 8:00 થી રાત્રે 9:00 • અઠવાડિયાના તમામ દિવસ
+    </p>
+
+    <div class="creator">
+        Website by SATYAMSINH CHAUHAN
+    </div>
+
+    <p style="margin-top:10px;font-size:12px;">
+        © 2026 Maa Shakti Printing & Digital Service.
+        સર્વાધિકાર સુરક્ષિત.
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     FLOATING BUTTONS
+========================================================= -->
+
+<a
+    href="https://wa.me/919510452071"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-float"
+    title="WhatsApp"
+    aria-label="WhatsApp"
+>
+    💬
+</a>
+
+
+<a
+    href="tel:+919510452071"
+    class="call-float"
+    title="Call"
+    aria-label="Call"
+>
+    📞
+</a>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+>
+    બુકિંગ તૈયાર થઈ રહ્યું છે...
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   GLOBAL SETTINGS
+========================================================= */
+
+const UPLOAD_URL =
+"https://script.google.com/macros/s/AKfycbzFDEW6TIpQTJ-jCHDmmXMJTCE2fAlGnB4hD9kqqsqDclpuFNH4Si7_YlWulzZiree70Q/exec";
+
+const WHATSAPP_NUMBER =
+"919510452071";
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+function hideLoader(){
+
+    const loader =
+    document.getElementById("loader");
+
+    if(!loader){
+        return;
+    }
+
+    loader.classList.add("hide");
+
+    setTimeout(function(){
+
+        loader.style.display = "none";
+
+    },700);
+
+}
+
+
+/* Normal loader timeout */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        hideLoader();
+
+    },1200);
+
+});
+
+
+/* Safety fallback:
+   Even if another resource fails,
+   loader will never remain forever.
+*/
+
+setTimeout(function(){
+
+    hideLoader();
+
+},5000);
+
+
+/* =========================================================
+   DOM READY
+========================================================= */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+    document.getElementById("menuBtn");
+
+    const navLinks =
+    document.getElementById("navLinks");
+
+
+    if(menuBtn && navLinks){
+
+        menuBtn.addEventListener(
+        "click",
+        function(){
+
+            const isOpen =
+            navLinks.classList.toggle("show");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+    }
+
+
+    /* Close menu after link click */
+
+    document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link){
+
+        link.addEventListener(
+        "click",
+        function(){
+
+            if(navLinks){
+
+                navLinks.classList.remove(
+                    "show"
+                );
+
+            }
+
+            if(menuBtn){
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SET MINIMUM DATE
+    ===================================================== */
+
+    const bookingDate =
+    document.getElementById("bookingDate");
+
+
+    if(bookingDate){
+
+        const today =
+        new Date();
+
+
+        const yyyy =
+        today.getFullYear();
+
+
+        const mm =
+        String(
+            today.getMonth() + 1
+        ).padStart(2,"0");
+
+
+        const dd =
+        String(
+            today.getDate()
+        ).padStart(2,"0");
+
+
+        bookingDate.min =
+        yyyy + "-" + mm + "-" + dd;
+
+    }
+
+
+    /* =====================================================
+       SERVICE CHANGE
+    ===================================================== */
+
+    const service =
+    document.getElementById("service");
+
+
+    if(service){
+
+        service.addEventListener(
+        "change",
+        serviceChanged
+        );
+
+    }
+
+
+    /* =====================================================
+       BOOKING FORM
+    ===================================================== */
+
+    const bookingForm =
+    document.getElementById("bookingForm");
+
+
+    if(bookingForm){
+
+        bookingForm.addEventListener(
+        "submit",
+        handleBookingSubmit
+        );
+
+    }
+
+
+    /* =====================================================
+       INITIAL REVEAL
+    ===================================================== */
+
+    revealOnScroll();
+
+
+});
+
+
+/* =========================================================
+   SERVICE CHANGE FUNCTION
+========================================================= */
+
+function serviceChanged(){
+
+    const serviceElement =
+    document.getElementById("service");
+
+
+    const info =
+    document.getElementById("serviceInfo");
+
+
+    if(!serviceElement || !info){
+
+        return;
+
+    }
+
+
+    const service =
+    serviceElement.value;
+
+
+    if(!service){
+
+        info.style.display =
+        "none";
+
+        info.innerHTML =
+        "";
+
+        return;
+
+    }
+
+
+    let text = "";
+
+
+    if(service.includes("PAN Card")){
+
+        text =
+        "📸 PAN Card સેવા માટે જરૂરી દસ્તાવેજો / ફોટા JPG અથવા JPEG ફોર્મેટમાં અપલોડ કરો.";
+
+    }
+
+    else if(service.includes("E-Shram")){
+
+        text =
+        "📸 E-Shram Card માટે જરૂરી દસ્તાવેજોના JPG / JPEG ફોટા અપલોડ કરો.";
+
+    }
+
+    else if(service.includes("Resume")){
+
+        text =
+        "📸 Resume / CV બનાવવા માટે તમારો ફોટો JPG / JPEG ફોર્મેટમાં અપલોડ કરી શકો છો.";
+
+    }
+
+    else if(service.includes("Marriage")){
+
+        text =
+        "📸 Marriage Bio Data માટે જરૂરી ફોટો JPG / JPEG ફોર્મેટમાં અપલોડ કરો.";
+
+    }
+
+    else if(service.includes("EPFO")){
+
+        text =
+        "📸 EPFO સેવા માટે જરૂરી દસ્તાવેજોના JPG / JPEG ફોટા અથવા PDF અપલોડ કરો.";
+
+    }
+
+    else if(service.includes("Online Form")){
+
+        text =
+        "📸 Online Form માટે જરૂરી ફોટા અને દસ્તાવેજો JPG / JPEG / PDF ફોર્મેટમાં અપલોડ કરો.";
+
+    }
+
+    else if(service.includes("Aadhaar")){
+
+        text =
+        "📄 Aadhaar સંબંધિત જરૂરી દસ્તાવેજ JPG / JPEG / PDFમાં અપલોડ કરી શકો છો.";
+
+    }
+
+    else if(service.includes("Printing")){
+
+        text =
+        "📄 Printing માટે જરૂરી PDF / JPG / JPEG ફાઇલ અપલોડ કરો.";
+
+    }
+
+    else{
+
+        text =
+        "📎 આ સેવા માટે જરૂરી JPG / JPEG / PDF ફાઇલ અપલોડ કરી શકો છો.";
+
+    }
+
+
+    info.innerHTML =
+    text;
+
+
+    info.style.display =
+    "block";
+
+}
+
+
+/* =========================================================
+   FILE UPLOAD
+========================================================= */
+
+function uploadFileToDrive(file){
+
+    return new Promise(
+    function(resolve,reject){
+
+
+        if(!file){
+
+            reject(
+                new Error(
+                    "File મળેલી નથી."
+                )
+            );
+
+            return;
+
+        }
+
+
+        const reader =
+        new FileReader();
+
+
+        reader.onload =
+        function(){
+
+
+            try{
+
+                const result =
+                reader.result;
+
+
+                const parts =
+                result.split(",");
+
+
+                if(parts.length < 2){
+
+                    reject(
+                        new Error(
+                            "File data વાંચી શકાયું નથી."
+                        )
+                    );
+
+                    return;
+
+                }
+
+
+                const base64Data =
+                parts[1];
+
+
+                const data = {
+
+                    fileName:
+                    file.name,
+
+                    mimeType:
+                    file.type ||
+                    "application/octet-stream",
+
+                    fileData:
+                    base64Data
+
+                };
+
+
+                fetch(
+                    UPLOAD_URL,
+                    {
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":
+                            "text/plain;charset=utf-8"
+                        },
+
+                        body:
+                        JSON.stringify(data)
+                    }
+                )
+
+                .then(
+                function(response){
+
+                    if(!response.ok){
+
+                        throw new Error(
+                            "Server error: " +
+                            response.status
+                        );
+
+                    }
+
+                    return response.json();
+
+                })
+
+                .then(
+                function(result){
+
+                    if(
+                        result &&
+                        result.success
+                    ){
+
+                        resolve(result);
+
+                    }
+
+                    else{
+
+                        reject(
+                            new Error(
+                                result &&
+                                result.error
+                                ?
+                                result.error
+                                :
+                                "File upload failed."
+                            )
+                        );
+
+                    }
+
+                })
+
+                .catch(
+                function(error){
+
+                    reject(error);
+
+                });
+
+
+            }
+
+            catch(error){
+
+                reject(error);
+
+            }
+
+        };
+
+
+        reader.onerror =
+        function(){
+
+            reject(
+                new Error(
+                    "File વાંચવામાં સમસ્યા આવી."
+                )
+            );
+
+        };
+
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+/* =========================================================
+   BOOKING SUBMIT
+========================================================= */
+
+async function handleBookingSubmit(e){
+
+    e.preventDefault();
+
+
+    const form =
+    document.getElementById(
+        "bookingForm"
+    );
+
+
+    const name =
+    document
+    .getElementById("customerName")
+    .value
+    .trim();
+
+
+    const phone =
+    document
+    .getElementById("customerPhone")
+    .value
+    .trim();
+
+
+    const service =
+    document
+    .getElementById("service")
+    .value;
+
+
+    const date =
+    document
+    .getElementById("bookingDate")
+    .value;
+
+
+    const time =
+    document
+    .getElementById("bookingTime")
+    .value;
+
+
+    const message =
+    document
+    .getElementById("message")
+    .value
+    .trim();
+
+
+    const fileInput =
+    document.getElementById(
+        "servicefile"
+    );
+
+
+    const paymentConfirm =
+    document.getElementById(
+        "paymentConfirm"
+    );
+
+
+    const toast =
+    document.getElementById(
+        "toast"
+    );
+
+
+    const submitBtn =
+    document.getElementById(
+        "bookingSubmitBtn"
+    );
+
+
+    /* =====================================================
+       VALIDATION
+    ===================================================== */
+
+    if(
+        !name ||
+        !phone ||
+        !service ||
+        !date ||
+        !time
+    ){
+
+        alert(
+            "કૃપા કરીને બધી જરૂરી માહિતી ભરો."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !/^[0-9]{10}$/.test(phone)
+    ){
+
+        alert(
+            "કૃપા કરીને સાચો 10 અંકનો મોબાઈલ નંબર લખો."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        paymentConfirm &&
+        !paymentConfirm.checked
+    ){
+
+        alert(
+            "કૃપા કરીને ચુકવણી / બુકિંગ સંબંધિત માહિતીની પુષ્ટિ કરો."
+        );
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       DISABLE BUTTON
+    ===================================================== */
+
+    if(submitBtn){
+
+        submitBtn.disabled =
+        true;
+
+        submitBtn.style.opacity =
+        ".7";
+
+        submitBtn.innerText =
+        "⏳ કૃપા કરીને રાહ જુઓ...";
+
+    }
+
+
+    if(toast){
+
+        toast.innerText =
+        "⏳ બુકિંગ તૈયાર થઈ રહ્યું છે...";
+
+        toast.classList.add(
+            "show"
+        );
+
+    }
+
+
+    let uploadedFiles = [];
+
+
+    try{
+
+
+        /* =================================================
+           UPLOAD FILES
+        ================================================= */
+        if(fileInput && fileInput.files.length > 50){
+         alert("તમે મહત્તમ 20 ફોટા અથવા PDF upload કરી શકો છો.");
+         return;
+         }
+
+        if(
+            fileInput &&
+            fileInput.files &&
+            fileInput.files.length > 0
+        ){
+
+
+            for(
+                let i = 0;
+                i < fileInput.files.length;
+                i++
+            ){
+
+
+                const file =
+                fileInput.files[i];
+
+
+                /* Maximum 50 MB */
+
+                if(
+                    file.size >
+                    50 * 1024 * 1024
+                ){
+
+                    throw new Error(
+                        file.name +
+                        " 50 MB કરતાં મોટી છે."
+                    );
+
+                }
+
+
+                /* Allowed types */
+
+                const allowedTypes = [
+
+                    "image/jpeg",
+
+                    "image/jpg",
+
+                    "application/pdf"
+
+                ];
+
+
+                if(
+                    file.type &&
+                    !allowedTypes.includes(
+                        file.type
+                    )
+                ){
+
+                    throw new Error(
+                        file.name +
+                        " માત્ર JPG, JPEG અથવા PDF હોવી જોઈએ."
+                    );
+
+                }
+
+
+                if(toast){
+
+                    toast.innerText =
+                    "📤 " +
+                    (i + 1) +
+                    "/" +
+                    fileInput.files.length +
+                    " ફાઇલ Upload થઈ રહી છે...";
+
+                }
+
+
+                const result =
+                await uploadFileToDrive(
+                    file
+                );
+
+
+                if(
+                    result &&
+                    result.success
+                ){
+
+                    uploadedFiles.push({
+
+                        name:
+                        result.fileName ||
+                        file.name,
+
+                        url:
+                        result.fileUrl ||
+                        ""
+
+                    });
+
+                }
+
+            }
+
+        }
+
+
+        /* =================================================
+           BOOKING ID
+        ================================================= */
+
+        const bookingId =
+        "MS-" +
+        Date.now()
+        .toString()
+        .slice(-6);
+
+
+        /* =================================================
+           FILE TEXT
+        ================================================= */
+
+        let filesText =
+        "કોઈ ફાઇલ અપલોડ કરેલ નથી";
+
+
+        if(
+            uploadedFiles.length > 0
+        ){
+
+            filesText =
+            uploadedFiles
+            .map(
+            function(file){
+
+                return (
+                    file.name +
+                    "\n" +
+                    file.url
+                );
+
+            })
+            .join("\n\n");
+
+        }
+
+
+        /* =================================================
+           WHATSAPP MESSAGE
+        ================================================= */
+
+        const bookingText =
+
+`*મા શક્તિ પ્રિન્ટિંગ & ડિજિટલ સર્વિસ*
+
+*નવી બુકિંગ વિનંતી*
+
+બુકિંગ નંબર: ${bookingId}
+
+ગ્રાહકનું નામ: ${name}
+
+ગ્રાહક મોબાઈલ: ${phone}
+
+પસંદ કરેલી સેવા: ${service}
+
+તારીખ: ${date}
+
+સમય: ${time}
+
+અપલોડ કરેલી ફાઇલ:
+
+${filesText}
+
+વધારાની માહિતી:
+${message || "કોઈ વધારાની માહિતી નથી"}
+
+Payment: Online / Offline
+
+Maa Shakti Printing & Digital Service
+Balana Muvada, Savli, Vadodara
+
+વેબસાઇટ દ્વારા મોકલેલ બુકિંગ`;
+
+
+        /* =================================================
+           SAVE BOOKING LOCALLY
+        ================================================= */
+
+        const bookingData = {
+
+            bookingId:
+            bookingId,
+
+            name:
+            name,
+
+            phone:
+            phone,
+
+            service:
+            service,
+
+            date:
+            date,
+
+            time:
+            time,
+
+            files:
+            uploadedFiles,
+
+            message:
+            message,
+
+            createdAt:
+            new Date().toISOString()
+
+        };
+
+
+        let oldBookings = [];
+
+
+        try{
+
+            const saved =
+            localStorage.getItem(
+                "maaShaktiBookings"
+            );
+
+
+            if(saved){
+
+                const parsed =
+                JSON.parse(saved);
+
+
+                if(
+                    Array.isArray(parsed)
+                ){
+
+                    oldBookings =
+                    parsed;
+
+                }
+
+            }
+
+        }
+
+        catch(storageError){
+
+            console.warn(
+                "Local storage unavailable.",
+                storageError
+            );
+
+        }
+
+
+        oldBookings.push(
+            bookingData
+        );
+
+
+        try{
+
+            localStorage.setItem(
+                "maaShaktiBookings",
+                JSON.stringify(
+                    oldBookings
+                )
+            );
+
+        }
+
+        catch(storageError){
+
+            console.warn(
+                "Could not save booking locally.",
+                storageError
+            );
+
+        }
+
+
+        /* =================================================
+           WHATSAPP URL
+        ================================================= */
+
+        const whatsappURL =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(
+            bookingText
+        );
+
+
+        if(toast){
+
+            toast.innerText =
+            "✓ બુકિંગ તૈયાર છે. WhatsApp ખોલી રહ્યા છીએ...";
+
+        }
+
+
+        /* =================================================
+           OPEN WHATSAPP
+        ================================================= */
+
+        setTimeout(
+        function(){
+
+            window.location.href = whatsappURL;
+
+        },300);
+
+
+        /* =================================================
+           RESET FORM
+        ================================================= */
+
+        if(form){
+
+            form.reset();
+
+        }
+
+
+        const serviceInfo =
+        document.getElementById(
+            "serviceInfo"
+        );
+
+
+        if(serviceInfo){
+
+            serviceInfo.style.display =
+            "none";
+
+            serviceInfo.innerHTML =
+            "";
+
+        }
+
+
+        if(toast){
+
+            setTimeout(
+            function(){
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },4000);
+
+        }
+
+
+    }
+
+    catch(error){
+
+
+        console.error(
+            "Booking Error:",
+            error
+        );
+
+
+        if(toast){
+
+            toast.classList.remove(
+                "show"
+            );
+
+        }
+
+
+        alert(
+            "બુકિંગ કરવામાં સમસ્યા આવી.\n\n" +
+            (
+                error.message ||
+                "કૃપા કરીને ફરી પ્રયાસ કરો."
+            )
+        );
+
+    }
+
+
+    finally{
+
+
+        if(submitBtn){
+
+            submitBtn.disabled =
+            false;
+
+            submitBtn.style.opacity =
+            "1";
+
+            submitBtn.innerText =
+            "📲 WhatsApp પર બુકિંગ મોકલો";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function revealOnScroll(){
+
+    const reveals =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+    reveals.forEach(
+    function(element){
+
+        const windowHeight =
+        window.innerHeight;
+
+
+        const elementTop =
+        element.getBoundingClientRect()
+        .top;
+
+
+        if(
+            elementTop <
+            windowHeight - 80
+        ){
+
+            element.classList.add(
+                "active"
+            );
+
+        }
+
+    });
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll,
+    {
+        passive:true
+    }
+);
+
+
+/* =========================================================
+   PARALLAX
+========================================================= */
+
+let lastMouseMove = 0;
+
+
+window.addEventListener(
+"mousemove",
+function(e){
+
+    const now =
+    Date.now();
+
+
+    if(
+        now - lastMouseMove < 30
+    ){
+
+        return;
+
+    }
+
+
+    lastMouseMove =
+    now;
+
+
+    const x =
+    (
+        window.innerWidth / 2 -
+        e.clientX
+    ) / 60;
+
+
+    const y =
+    (
+        window.innerHeight / 2 -
+        e.clientY
+    ) / 60;
+
+
+    document
+    .querySelectorAll(
+        ".bg-shape"
+    )
+    .forEach(
+    function(
+        shape,
+        index
+    ){
+
+        const factor =
+        (index + 1) * 3;
+
+
+        shape.style.transform =
+        `translate(${x * factor}px,${y * factor}px)`;
+
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>
